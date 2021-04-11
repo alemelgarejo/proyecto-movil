@@ -1,0 +1,7 @@
+{
+  "name": "inmodata",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
