@@ -3,6 +3,7 @@
     <!-- <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons> -->
+
     <ion-title>Clientes</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
@@ -11,6 +12,9 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+      <ion-refresher slot="fixed" (ionRefresh)='doRefresh($event)'>
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
     <ion-card  *ngFor="let cliente of clientes$|async" (click)="openDetailModal(cliente)">
       <ion-card-content>
         <p  class="ion-text-left">Nombre: &nbsp;&nbsp;&nbsp;{{cliente.name}}</p><hr>

@@ -15,11 +15,22 @@ import { DetailComponent } from './detail/detail.component';
 export class ClientesPage {
 
   clientes$: Observable<Cliente>;
+  items: any[] = [];
   constructor(private clientesService: ClientesService, private router: Router, private loadingCtrl: LoadingController, private modalCtrl: ModalController) { }
 
   /* async ngOnInit() {
     this.ionViewWillEnter();
     } */
+  doRefresh(event) {
+    setTimeout(()=>{
+      this.clientes$ = this.clientesService.getClientes().pipe(
+        tap((clientes) => {
+          return clientes;
+        })
+      );
+      event.target.complete();
+    },500);
+  }
 
 
   async ionViewWillEnter() {
