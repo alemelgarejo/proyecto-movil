@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{cliente.name}} {{cliente.surname}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-text>
+      <h1>{{cliente.name}}  {{cliente.surname}}</h1>
+      <p class="ion-margin-vertical">Usuario: &nbsp;&nbsp;&nbsp;{{cliente.user_id}}</p>
+      <p class="ion-margin-vertical">DNI: &nbsp;&nbsp;&nbsp;{{cliente.dni}}</p>
+      <p class="ion-margin-vertical">Estado: &nbsp;&nbsp;&nbsp;{{cliente.estado}}</p>
+      <p class="ion-margin-vertical">Email: &nbsp;&nbsp;&nbsp;{{cliente.email}}</p>
+      <p class="ion-margin-vertical">Fecha de nacimiento: &nbsp;&nbsp;&nbsp;{{cliente.fecha_nacimiento}}</p>
+      <p class="ion-margin-vertical">Dirección: &nbsp;&nbsp;&nbsp;{{cliente.direccion}}</p>
+      <p class="ion-margin-vertical">Ciudad: &nbsp;&nbsp;&nbsp;{{cliente.ciudad}}</p>
+      <p class="ion-margin-vertical">Provincia: &nbsp;&nbsp;&nbsp;{{cliente.provincia}}</p>
+      <p class="ion-margin-vertical">Teléfono: &nbsp;&nbsp;&nbsp;{{cliente.telefono}}</p>
+      <p class="ion-margin-vertical">Observaciones: &nbsp;&nbsp;&nbsp;{{cliente.observaciones}}</p>
+    </ion-text>
+
+    <ion-button expand="block" (click)="openEditModal()">Editar</ion-button>
+    <ion-button expand="block" color="danger" (click)="onDeleteCliente()">Eliminar</ion-button>
+  </div>
+</ion-content>

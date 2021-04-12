@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content class="ion-padding">
+    <form [formGroup]="form">
+        <br>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Apellidos</ion-label>
+            <ion-input formControlName="surname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Usuario encargado</ion-label>
+            <ion-input formControlName="user_id" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">DNI</ion-label>
+            <ion-input formControlName="dni"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input formControlName="estado"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Fecha de nacimiento</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha_nacimiento" [(ngModel)]="DD/MM/YYYY"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input formControlName="direccion"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Ciudad</ion-label>
+            <ion-input formControlName="ciudad"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Provincia</ion-label>
+            <ion-input formControlName="provincia"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Teléfono</ion-label>
+            <ion-input formControlName="telefono"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Observaciones</ion-label>
+            <ion-textarea formControlName="observaciones"></ion-textarea>
+          </ion-item>
+
+          <ion-button expand="block" (click)="" [disabled]="form.invalid">
+            Actualizar
+          </ion-button>
+    </form>
+</ion-content>

@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/clientes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{cliente.name}} {{cliente.surname}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="ion-no-padding">
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Usuario: &nbsp;&nbsp;&nbsp;{{cliente.user_id}}</p>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">DNI: &nbsp;&nbsp;&nbsp;{{cliente.dni}}</p>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Estado: &nbsp;&nbsp;&nbsp;{{cliente.estado}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Email: &nbsp;&nbsp;&nbsp;{{cliente.email}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Fecha de nacimiento: &nbsp;&nbsp;&nbsp;{{cliente.fecha_nacimiento}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Dirección: &nbsp;&nbsp;&nbsp;{{cliente.direccion}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Ciudad: &nbsp;&nbsp;&nbsp;{{cliente.ciudad}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Provincia: &nbsp;&nbsp;&nbsp;{{cliente.provincia}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Teléfono: &nbsp;&nbsp;&nbsp;{{cliente.telefono}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <p  class="ion-text-rigth">Observaciones: &nbsp;&nbsp;&nbsp;{{cliente.observaciones}}</p>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+          <ion-card>
+            <ion-card-content>
+              <ion-button expand="block" routerLink="/cliente-edit:clienteId">
+                Editar
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

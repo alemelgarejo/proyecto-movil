@@ -11,6 +11,28 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'clientes',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./clientes/clientes.module').then( m => m.ClientesPageModule)
+      },
+      {
+        path: ':clienteId',
+        loadChildren: () => import('./clientes/cliente-detail/cliente-detail.module').then( m => m.ClienteDetailPageModule)
+      },
+    ]
+
+  },
+  {
+    path: 'cliente-add',
+    loadChildren: () => import('./clientes/cliente-add/cliente-add.module').then( m => m.ClienteAddPageModule)
+  },
+  {
+    path: 'cliente-edit'+':clienteId',
+    loadChildren: () => import('./clientes/cliente-edit/cliente-edit.module').then( m => m.ClienteEditPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-card  *ngFor="let cliente of clientes$|async" (click)="openDetailModal(cliente)">
+      <ion-card-content>
+        <p  class="ion-text-left">Nombre: &nbsp;&nbsp;&nbsp;{{cliente.name}}</p><hr>
+        <p  class="ion-text-left">Apellidos: &nbsp;&nbsp;&nbsp;{{cliente.surname}}</p><hr>
+        <p  class="ion-text-left">Dni: &nbsp;&nbsp;&nbsp;{{cliente.dni}}</p><hr>
+        <p  class="ion-text-left">Estado: &nbsp;&nbsp;&nbsp;{{cliente.estado}}</p><hr>
+        <p  class="ion-text-left">Email: &nbsp;&nbsp;&nbsp;{{cliente.email}}</p><hr>
+        <p  class="ion-text-left">Teléfono: &nbsp;&nbsp;&nbsp;{{cliente.telefono}}</p><hr>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="warning">
+        <ion-icon name="add" routerLink="/cliente-add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
