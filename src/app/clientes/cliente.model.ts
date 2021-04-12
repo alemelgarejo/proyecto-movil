@@ -6,7 +6,7 @@ export interface Cliente {
   dni: string;
   estado: string;
   email: string;
-  fecha_nacimiento: string;
+  fecha_nacimiento: '';
   direccion: string;
   ciudad: string;
   provincia: string;

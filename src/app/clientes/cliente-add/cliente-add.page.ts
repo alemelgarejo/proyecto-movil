@@ -71,7 +71,7 @@ export class ClienteAddPage implements OnInit {
 
   async submitCliente() {
     //console.log(this.form.value);
-    const loading = await this.loadingCtrl.create({message: 'Loading ...'});
+    const loading = await this.loadingCtrl.create({message: 'Creando ...'});
     loading.present();
 
     let response: Observable<Cliente>;

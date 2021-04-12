@@ -1,8 +1,27 @@
+
+
+<div *ngIf="splash == false">
+
+</div>
+
+<div *ngIf="splash == true">
+  <div id="custom-overlay" style.display="flex">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <img src="assets/logos/color_logo_transparent.png">
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div>
+</div>
+
 <ion-header>
   <ion-toolbar>
     <ion-title>
       Inmodata
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

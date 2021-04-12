@@ -12,12 +12,17 @@ import { DetailComponent } from './detail/detail.component';
   templateUrl: './clientes.page.html',
   styleUrls: ['./clientes.page.scss'],
 })
-export class ClientesPage{
+export class ClientesPage {
 
   clientes$: Observable<Cliente>;
   constructor(private clientesService: ClientesService, private router: Router, private loadingCtrl: LoadingController, private modalCtrl: ModalController) { }
 
-  async ngOnInit() {
+  /* async ngOnInit() {
+    this.ionViewWillEnter();
+    } */
+
+
+  async ionViewWillEnter() {
     const loading =await this.loadingCtrl.create({message: 'Cargando ...'});
     loading.present();
 
@@ -27,11 +32,9 @@ export class ClientesPage{
         return clientes;
       })
     );
-    /* this.clientesService.getClientes().subscribe(data => {
-      console.log(data);
-      this.clientes = data;
-    }); */
   }
+
+
 
   async openDetailModal(cliente: Cliente) {
     const modal = await this.modalCtrl.create({
@@ -44,30 +47,34 @@ export class ClientesPage{
     const { data: updatedCliente, role } = await modal.onDidDismiss();
 
     if(updatedCliente && role === 'edit') {
-      this.clientes$ = this.clientes$.pipe(
-        map((clientes) => {
+      let clientes = this.clientes$.pipe(
+        map(() => {
           console.log(clientes);
-            /* clientes.forEach(
+            clientes.forEach(
               (cli) => {
                 if(cli.id == updatedCliente.id) {
                   cli = updatedCliente;
                 }
+                this.router.navigate(['/clientes']);
                 return cli;
-              }) */
+              })
             return clientes;
-
           }
         )
       );
 
     }
     if(role === 'delete') {
-      this.clientes$ = this.clientes$.pipe(
-        map((clientes) => {
-            /* clientes.filter(cli => cli.id !== updatedCliente); */
+      let clientes = this.clientes$.pipe(
+        map(() => {
+            clientes.filter(cli => cli.id !== updatedCliente);
             return clientes;
+
           })
+
       );
+
+
     }
 
 
